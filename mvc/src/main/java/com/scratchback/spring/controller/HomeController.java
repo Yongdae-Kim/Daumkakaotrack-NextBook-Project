@@ -25,9 +25,6 @@ import com.scratchback.spring.test.BlogDataSourceFactory;
 import com.scratchback.spring.test.BlogMapper;
 import com.scratchback.spring.test.Dummy;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
 

@@ -23,6 +23,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.scratchback.spring.controller.HomeController;
+import com.scratchback.spring.controller.LoginController;
 import com.scratchback.spring.test.Blog;
 import com.scratchback.spring.test.BlogDataSourceFactory;
 import com.scratchback.spring.test.BlogMapper;
@@ -30,7 +31,7 @@ import com.scratchback.spring.test.BlogMapper;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(HomeController.class);
+			.getLogger(LoginController.class);
 
 	@Override
 	public boolean supports(Class<?> authentication) {

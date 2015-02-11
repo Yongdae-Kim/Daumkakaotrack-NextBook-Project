@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scratchback.spring.CustomUserDetails;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class LoginController {
 
