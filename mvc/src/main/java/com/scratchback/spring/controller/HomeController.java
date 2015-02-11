@@ -1,5 +1,6 @@
 package com.scratchback.spring.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.sql.DataSource;
@@ -19,6 +20,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.scratchback.spring.sample.Book;
+import com.scratchback.spring.sample.SampleBookProvider;
 import com.scratchback.spring.service.Sample;
 import com.scratchback.spring.test.Blog;
 import com.scratchback.spring.test.BlogDataSourceFactory;
@@ -47,7 +50,10 @@ public class HomeController {
 
 		Blog blog = initDB();
 
-		model.addAttribute("blog", blog);
+		SampleBookProvider provider = new SampleBookProvider();
+		List<Book> sampleBooks = provider.getBooks();
+
+		model.addAttribute("sampleBooks", sampleBooks);
 		model.addAttribute("test", test);
 		model.addAttribute("dummy", dummy);
 

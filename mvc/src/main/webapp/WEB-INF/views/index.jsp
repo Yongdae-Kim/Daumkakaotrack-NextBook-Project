@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,8 @@
 	rel="stylesheet" type="text/css">
 <link href="resources/css/animate.css" rel="stylesheet" type="text/css">
 <!-- Squad theme CSS -->
-<link href="resources/css/theme_style.css" rel="stylesheet" type="text/css">
+<link href="resources/css/theme_style.css" rel="stylesheet"
+	type="text/css">
 <link href="resources/color/default.css" rel="stylesheet"
 	type="text/css">
 
@@ -27,8 +29,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 	<!-- Preloader -->
-
-	<p>blog : "${blog}"</p>
+	<p>blog : "${sampleBooks.get(0).title}"</p>
 	<p>test : "${test}"</p>
 	<p>a : "${dummy.a}"</p>
 
@@ -47,29 +48,8 @@
 					<h1>NEXT BOOK</h1>
 				</a>
 			</div>
-
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div
-				class="collapse navbar-collapse navbar-right navbar-main-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#intro">Home</a></li>
-					<li><a href="#today">Today's Books</a></li>
-					<li><a href="#">My Books</a></li>
-					<li><a href="#">Add Books</a></li>
-					<li><a href="#">Recommend</a></li>
-					<!-- --------------------login form start-------------------- -->
-					<li><a href="login">
-							<button type="button" class="btn btn-default navbar-btn">Log
-								in</button>
-					</a></li>
-					<li><a href="register">
-							<button type="button" class="btn btn-default navbar-btn">Sign
-								Up</button>
-					</a></li>
-					<span>${msg}</span>
-					<!-- --------------------login form end-------------------- -->
-				</ul>
-			</div>
+			<jsp:include page="page-module/navi.jsp" flush="false" />
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container -->
@@ -117,87 +97,26 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow bounceInUp" data-wow-delay="0.2s">
-						<div class="team boxed-grey">
-							<div class="inner">
-								<h5>Anna Hanaceck</h5>
-								<p class="subtitle">Pixel Crafter</p>
-								<div class="avatar">
-									<img src="resources/img/team/1.jpg" alt=""
-										class="img-responsive img-circle" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow bounceInUp" data-wow-delay="0.5s">
-						<div class="team boxed-grey">
-							<div class="inner">
-								<h5>Maura Daniels</h5>
-								<p class="subtitle">Ruby on Rails</p>
-								<div class="avatar">
-									<img src="resources/img/team/2.jpg" alt=""
-										class="img-responsive img-circle" />
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow bounceInUp" data-wow-delay="0.8s">
-						<div class="team boxed-grey">
-							<div class="inner">
-								<h5>Jack Briane</h5>
-								<p class="subtitle">jQuery Ninja</p>
-								<div class="avatar">
-									<img src="resources/img/team/3.jpg" alt=""
-										class="img-responsive img-circle" />
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow bounceInUp" data-wow-delay="1s">
-						<div class="team boxed-grey">
-							<div class="inner">
-								<h5>Tom Petterson</h5>
-								<p class="subtitle">Typographer</p>
-								<div class="avatar">
-									<img src="resources/img/team/4.jpg" alt=""
-										class="img-responsive img-circle" />
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
+				<jsp:include page="function-module/todayBook.jsp" flush="false" />
 			</div>
 		</div>
 	</section>
 	<!-- /Section: today -->
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="wow shake" data-wow-delay="0.4s">
-						<div class="page-scroll marginbot-30">
-							<a href="#intro" id="totop" class="btn btn-circle"> <i
-								class="fa fa-angle-double-up animated"></i>
-							</a>
-						</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12">
+				<div class="wow shake" data-wow-delay="0.4s">
+					<div class="page-scroll marginbot-30">
+						<a href="#intro" id="totop" class="btn btn-circle"> <i
+							class="fa fa-angle-double-up animated"></i>
+						</a>
 					</div>
-					<p>&copy;Copyright 2014 - Squad. All rights reserved.</p>
 				</div>
+				<jsp:include page="page-module/footer.jsp" flush="false" />
 			</div>
 		</div>
-	</footer>
-
+	</div>
 
 	<!-- Core JavaScript Files -->
 	<script src="resources/js/jquery.min.js"></script>

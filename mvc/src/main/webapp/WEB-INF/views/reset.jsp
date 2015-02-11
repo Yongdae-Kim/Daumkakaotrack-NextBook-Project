@@ -48,6 +48,8 @@
 	</div>
 	<!-- /container -->
 
+	<jsp:include page="page-module/footer.jsp" flush="false" />
+
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- Core JavaScript Files -->
 	<script src="resources/js/jquery.min.js"></script>

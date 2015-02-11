@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>NextBook Registration Page</title>
+<title>Create a NextBook Account</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
@@ -56,6 +56,8 @@
 
 	</div>
 	<!-- /container -->
+
+	<jsp:include page="page-module/footer.jsp" flush="false" />
 
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- Core JavaScript Files -->
