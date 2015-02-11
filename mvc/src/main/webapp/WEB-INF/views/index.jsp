@@ -16,10 +16,11 @@
 <!-- Fonts -->
 <link href="resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<link href="resources/css/animate.css" rel="stylesheet" />
+<link href="resources/css/animate.css" rel="stylesheet" type="text/css">
 <!-- Squad theme CSS -->
-<link href="resources/css/style.css" rel="stylesheet">
-<link href="resources/color/default.css" rel="stylesheet">
+<link href="resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="resources/color/default.css" rel="stylesheet"
+	type="text/css">
 
 </head>
 
@@ -63,29 +64,16 @@
 						</ul></li>
 					<!-- --------------------login form start-------------------- -->
 					<li>
-						<form name="login" method="post" accept-charset="utf-8"
-							action="index.do">
-							<ul>
-								<li><input type="email" class="form-control" name="id"
-									placeholder="yourname@email.com" required
-									aria-describedby="sizing-addon1" value="${user.id}"></li>
-								<li><input type="password" class="form-control"
-									name="password" placeholder="password" required
-									aria-describedby="sizing-addon1"></li>
-								<li><input type="password" class="form-control"
-									name="confirmPassword" placeholder="condirm password" required
-									aria-describedby="sizing-addon1"></li>
-
-								<span>${msg}</span>
-
-								<button type="submit" class="btn btn-default" value="register">Submit</button>
-
-								<button type="button" class="btn btn-default navbar-btn"
-									data-toggle="modal" data-target="#exampleModal">Sign
-									in</button>
-							</ul>
-						</form>
+						<a href="login">
+							<button	type="button" class="btn btn-default navbar-btn">Log in</button>
+						</a> 
 					</li>
+					<li>
+						<a href="register">
+							<button type="button" class="btn btn-default navbar-btn">Sign Up</button> 
+						</a>
+					</li>
+					<span>${msg}</span> 
 					<!-- --------------------login form end-------------------- -->
 				</ul>
 			</div>
@@ -458,7 +446,6 @@
 	<script src="resources/js/wow.min.js"></script>
 	<!-- Custom Theme JavaScript -->
 	<script src="resources/js/custom.js"></script>
-
 </body>
 
 </html>
