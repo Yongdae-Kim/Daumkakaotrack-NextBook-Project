@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>NextBook Log in Page</title>
+<title>Reset Your NextBook Password</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
@@ -27,29 +27,21 @@
 	<div class="container">
 
 		<div class="page-header">
-			<h1>Log in to NextBook</h1>
+			<h1>
+				Reset Your NextBook Password<br> <small>Submit your
+					email address and we’ll send you a link to reset your password.</small>
+			</h1>
+
 		</div>
 
 		<!-- Simple Login - START -->
 		<form class="col-md-12" method="post" action="loginProcess">
 			<div class="form-group">
 				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="user_id">
+					name="user_reset_id">
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control input-lg"
-					placeholder="Password" name="user_pw">
-			</div>
-			<div class="form-group">
-				<button class="btn btn-primary btn-lg btn-block">Log in</button>
-			</div>
-			<div class="form-group">
-				<span>Forget your password?<a href="reset"> Reset your
-						password</a></span>
-			</div>
-			<div class="form-group">
-				<span>Don't have an a account?<a href="register"> Create
-						a NextBook account</a></span>
+				<button class="btn btn-primary btn-lg btn-block">Submit</button>
 			</div>
 		</form>
 		<!-- Simple Login - END -->

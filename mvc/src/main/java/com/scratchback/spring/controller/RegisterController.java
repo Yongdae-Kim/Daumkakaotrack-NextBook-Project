@@ -20,6 +20,15 @@ public class RegisterController {
 		return "register";
 	}
 
+	@RequestMapping(value = "reset", method = RequestMethod.GET)
+	public String reset(Locale locale, Model model) {
+		return "reset";
+	}
+
+	@RequestMapping(value = "/registerFinished.do")
+	public String registerFinished(Model model) {
+		return "registerFinished";
+	}
 	// @RequestMapping(value = "register", method = RequestMethod.GET)
 	// public String register(Locale locale, @ModelAttribute("user") User user,
 	// Model model, HttpSession session) {
@@ -34,10 +43,5 @@ public class RegisterController {
 	//
 	// return "redirect:registerFinished.do";
 	// }
-
-	@RequestMapping(value = "/registerFinished.do")
-	public String registerFinished(Model model) {
-		return "registerFinished";
-	}
 
 }
