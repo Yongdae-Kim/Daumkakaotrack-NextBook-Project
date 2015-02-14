@@ -1,36 +1,23 @@
 package com.scratchback.spring.user;
 
 public class User {
-	private String id;
-	private String password;
-	private String confirmPassword;
+	private String username;
 
-	public void setId(String id) {
-		this.id = id;
+	public String getUsername() {
+		return username;
 	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	private String password;
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public String getId() {
-		return id;
-	}
-
 	public String getPassword() {
 		return password;
-	}
-
-	public boolean isOk() {
-		return (id != null) && id.equals("admin@naver.com")
-				&& (password != null) && password.equals("1234");
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
 	}
 }

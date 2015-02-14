@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.scratchback.spring.CustomUserDetails;
+import com.scratchback.spring.service.login.LoginUserDetails;
 
 @Controller
 public class LoginController {
@@ -25,13 +25,14 @@ public class LoginController {
 
 	@RequestMapping(value = "login_success", method = RequestMethod.GET)
 	public String login_success(Model model, HttpSession session) {
-		CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder
+		LoginUserDetails userDetails = (LoginUserDetails) SecurityContextHolder
 				.getContext().getAuthentication().getDetails();
 
 		logger.info("Welcome login_success! {}, {}", session.getId(),
 				userDetails.getUsername() + "/" + userDetails.getPassword());
+		
 		session.setAttribute("userLoginInfo", userDetails);
-
+		
 		model.addAttribute("msg", "success");
 
 		return "index";
@@ -39,7 +40,7 @@ public class LoginController {
 
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public void logout(HttpSession session) {
-		CustomUserDetails userDetails = (CustomUserDetails) session
+		LoginUserDetails userDetails = (LoginUserDetails) session
 				.getAttribute("userLoginInfo");
 
 		logger.info("Welcome logout! {}, {}", session.getId(),

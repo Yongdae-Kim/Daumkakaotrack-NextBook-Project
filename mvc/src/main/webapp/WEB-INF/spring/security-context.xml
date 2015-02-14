@@ -25,10 +25,10 @@
 		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 
 	<authentication-manager>
-		<authentication-provider ref="customAuthenticationProvider" />
+		<authentication-provider ref="userAuthService" />
 	</authentication-manager>
 
-	<beans:bean id="customAuthenticationProvider"
-		class="com.scratchback.spring.CustomAuthenticationProvider" />
+	<beans:bean id="userAuthService"
+		class="com.scratchback.spring.service.login.LoginUserAuthService" />
 
 </beans:beans>
