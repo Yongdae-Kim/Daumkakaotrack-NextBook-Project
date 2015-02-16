@@ -41,7 +41,7 @@ public class LoginController {
 		return model;
 	}
 
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	@RequestMapping(value = "/deny", method = RequestMethod.GET)
 	public ModelAndView accesssDenied() {
 
 		ModelAndView model = new ModelAndView();
@@ -55,7 +55,7 @@ public class LoginController {
 			model.addObject("username", userDetail.getUsername());
 		}
 
-		model.setViewName("403");
+		model.setViewName("deny");
 		return model;
 	}
 }

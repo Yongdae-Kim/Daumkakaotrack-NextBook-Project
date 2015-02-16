@@ -43,11 +43,11 @@
 			action="<c:url value='/j_spring_security_check' />">
 			<div class="form-group">
 				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="username">
+					name="username" value="${username}" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
-					placeholder="Password" name="password">
+					placeholder="Password" name="password" value="${password}" />
 			</div>
 			<div class="form-group">
 				<input name="submit" class="btn btn-primary btn-lg btn-block"

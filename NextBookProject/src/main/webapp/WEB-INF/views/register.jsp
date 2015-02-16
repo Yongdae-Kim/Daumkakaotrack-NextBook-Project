@@ -18,37 +18,38 @@
 <!-- Fonts -->
 <link href="resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<!-- CUSTOM STYLE CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
 
 </head>
 <body>
 	<div class="container">
 
 		<div class="page-header">
-			<h1>Create a NextBook Account</h1>
+			<h1>
+				Create a NextBook Account<br> <small>${error}</small>
+			</h1>
 		</div>
 
 		<!-- Simple Login - START -->
-		<form class="col-md-12" method="post" accept-charset="utf-8"
-			action="registerFinished.do">
+		<form name=registerForm class="col-md-12" method="get"
+			accept-charset="utf-8" action="registerSubmit">
 			<div class="form-group">
 				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="new_user_id">
+					name="newUsername" value="${username}" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
-					placeholder="Password" name="new_user_pw">
+					placeholder="Password" name="newUserPassword" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
-					placeholder="Confirm Password" name="new_user_confirm_pw">
+					placeholder="Confirm Password" name="newUserConfirmPassword" />
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-lg btn-block"
+					value="Create
+					New Account" />
 			</div>
 		</form>
-		<div class="form-group">
-			<button class="btn btn-primary btn-lg btn-block">Create New
-				Account</button>
-		</div>
 		<div class="form-group">
 			<span>Already have an account?<a href="login"> Log in</a></span>
 		</div>

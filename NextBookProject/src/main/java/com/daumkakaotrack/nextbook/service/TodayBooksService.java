@@ -3,8 +3,11 @@ package com.daumkakaotrack.nextbook.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.daumkakaotrack.nextbook.model.TodayBook;
 
+@Service
 public class TodayBooksService {
 	private List<TodayBook> todayBooks;
 

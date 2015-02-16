@@ -29,10 +29,19 @@ VALUES ('admin@hanmail.net', 'ROLE_ADMIN');
 INSERT INTO users(username,password,enabled)
 VALUES ('test@hanmail.net','1234', TRUE);
 INSERT INTO user_roles (username, ROLE)
-VALUES ('test@hanmail.net', 'ROLE_USER');
+VALUES ('zxc@hanmail.net', 'ROLE_USER');
 
 select * from nextbook.`users`
 
 SELECT * FROM nextbook.`users` WHERE username = 'admin@hanmail.net' AND password = '1234';
+
+use nextbook; 
+IF EXISTS (SELECT * FROM nextbook.user_roles WHERE name = 'zxc@hanmail.net') DROP USER ['zxc@hanmail.net']
+IF EXISTS (SELECT * FROM nextbook.users WHERE name = 'zxc@hanmail.net') DROP USER ['zxc@hanmail.net']
+
+use nextbook;
+DELETE FROM nextbook.user_roles WHERE username='rty@hanmail.net';
+DELETE FROM nextbook.users WHERE username='rty@hanmail.net';
+
 
 
