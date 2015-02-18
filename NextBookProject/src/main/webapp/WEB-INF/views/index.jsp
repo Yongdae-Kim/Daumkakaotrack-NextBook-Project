@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Squadfree - Free bootstrap 3 one page template</title>
+<title>NEXT BOOK - DaumKakao Track</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
@@ -44,7 +44,7 @@
 				</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<jsp:include page="page-module/navi.jsp" flush="false" />
+			<jsp:include page="page-module/pageNavi.jsp" flush="false" />
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container -->

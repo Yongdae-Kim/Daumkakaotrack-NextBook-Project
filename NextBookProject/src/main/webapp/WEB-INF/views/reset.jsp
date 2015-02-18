@@ -23,17 +23,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<a href="welcome"><button type="button"
-						class="btn btn-default btn-lg ">Home</button></a>
-			</div>
-			<div class="col-md-4 col-md-offset-4">
-				<a href="login"><button type="button"
-						class="btn btn-default btn-lg ">Log In</button></a> <a href="register"><button
-						type="button" class="btn btn-default btn-lg ">Sign Up</button></a>
-			</div>
-		</div>
+		<jsp:include page="page-module/loginNavi.jsp" flush="false" />
 		<div class="page-header">
 			<h1>
 				Reset Your NextBook Password<br> <small>Submit your
@@ -42,14 +32,18 @@
 		</div>
 
 		<!-- Simple Login - START -->
-		<form class="col-md-12" method="post" action="loginProcess">
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="user_reset_id">
+		<form name="resetForm" class="col-md-12" method="post"
+			action="resetSubmit">
+			<div class=" form-group">
+				<input type="email" class="form-control input-lg"
+					placeholder="Email" name="username">
 			</div>
 			<div class="form-group">
-				<button class="btn btn-primary btn-lg btn-block">Submit</button>
+				<input name="submit" class="btn btn-primary btn-lg btn-block"
+					type="submit" value="Send" />
 			</div>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 		</form>
 		<!-- Simple Login - END -->
 	</div>

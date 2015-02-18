@@ -42,7 +42,7 @@
 		<form name='loginForm' class="col-md-12" method="post"
 			action="<c:url value='/j_spring_security_check' />">
 			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Email"
+				<input type="email" class="form-control input-lg" placeholder="Email"
 					name="username" value="${username}" />
 			</div>
 			<div class="form-group">

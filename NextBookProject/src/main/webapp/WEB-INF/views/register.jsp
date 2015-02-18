@@ -34,8 +34,8 @@
 		<form name=registerForm class="col-md-12" method="post"
 			accept-charset="utf-8" action="registerSubmit">
 			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="username" value="${username}" />
+				<input type="email" class="form-control input-lg"
+					placeholder="Email" name="username" value="${username}" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
