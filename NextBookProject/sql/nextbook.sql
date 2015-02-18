@@ -43,5 +43,6 @@ use nextbook;
 DELETE FROM nextbook.user_roles WHERE username='rty@hanmail.net';
 DELETE FROM nextbook.users WHERE username='rty@hanmail.net';
 
-
+use nextbook;
+SELECT COUNT(*) FROM nextbook.users WHERE username ='rty@hanmail.net'
 

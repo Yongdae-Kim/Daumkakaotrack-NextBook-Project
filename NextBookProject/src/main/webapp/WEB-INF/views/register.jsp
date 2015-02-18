@@ -20,7 +20,8 @@
 	rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body onload='document.registerForm.newUsername.focus();'>
+
 	<div class="container">
 
 		<div class="page-header">
@@ -30,25 +31,27 @@
 		</div>
 
 		<!-- Simple Login - START -->
-		<form name=registerForm class="col-md-12" method="get"
+		<form name=registerForm class="col-md-12" method="post"
 			accept-charset="utf-8" action="registerSubmit">
 			<div class="form-group">
 				<input type="text" class="form-control input-lg" placeholder="Email"
-					name="newUsername" value="${username}" />
+					name="username" value="${username}" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
-					placeholder="Password" name="newUserPassword" />
+					placeholder="Password" name="password" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
-					placeholder="Confirm Password" name="newUserConfirmPassword" />
+					placeholder="Confirm Password" name="confirmPassword" />
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary btn-lg btn-block"
 					value="Create
 					New Account" />
 			</div>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 		</form>
 		<div class="form-group">
 			<span>Already have an account?<a href="login"> Log in</a></span>

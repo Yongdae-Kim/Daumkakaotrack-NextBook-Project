@@ -20,18 +20,25 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void insertUser(User user) {
+	public boolean insertUser(User user) {
+
+		boolean result = false;
+
 		SqlSession session = new SessionManager()
 				.createSession(UserMapper.class);
 		UserMapper mapper = session.getMapper(UserMapper.class);
 		try {
-			mapper.insertUser(user);
-			mapper.insertUserRole(user.getUsername());
+			if (mapper.isExistedUsername(user.getUsername()) == 0) {
+				mapper.insertUser(user);
+				mapper.insertUserRole(user.getUsername());
+				result = true;
+			}
 		} catch (NullPointerException e) {
 			throw new NullPointerException();
 		} finally {
 			session.close();
 		}
+		return result;
 	}
 
 	@Override

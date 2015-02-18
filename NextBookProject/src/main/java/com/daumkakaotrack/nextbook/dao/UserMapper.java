@@ -2,7 +2,6 @@ package com.daumkakaotrack.nextbook.dao;
 
 import java.util.ArrayList;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.daumkakaotrack.nextbook.model.User;
@@ -27,4 +26,7 @@ public interface UserMapper {
 	void deleteUser(String username);
 
 	void updateUser(String username);
+
+	@Select("SELECT COUNT(*) FROM nextbook.users WHERE username=#{username}")
+	int isExistedUsername(String username);
 }

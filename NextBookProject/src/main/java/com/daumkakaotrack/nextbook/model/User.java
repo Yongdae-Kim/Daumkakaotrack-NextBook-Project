@@ -1,9 +1,14 @@
 package com.daumkakaotrack.nextbook.model;
 
-public class User {
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+public class User {
+	@Pattern(regexp = "^[_0-9a-zA-Z-]+@[0-9a-zA-Z]+(.[_0-9a-zA-Z-]+)*$")
 	String username;
+	@Size(min = 5, max = 50)
 	String password;
+	@Size(min = 5, max = 50)
 	String confirmPassword;
 
 	public void setUsername(String username) {
@@ -28,5 +33,9 @@ public class User {
 
 	public String getConfirmPassword() {
 		return confirmPassword;
+	}
+
+	public boolean isMatchedPassword() {
+		return this.password.equals(this.confirmPassword);
 	}
 }
