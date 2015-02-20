@@ -10,9 +10,11 @@ import com.daumkakaotrack.nextbook.model.User;
 public interface UserDAO {
 	public List<User> getUsers();
 
-	public boolean insertUser(User user);
+	public void insertUser(User user);
 
-	public void updateUser(String username);
+	public void updateUserPassword(String username, String password);
 
 	public void deleteUser(String username);
+
+	public boolean isExistedUser(String username);
 }

@@ -10,12 +10,13 @@
 <meta name="author" content="" />
 <title>Create a NextBook Account</title>
 
-<!-- Bootstrap Core CSS -->
+<!-- Bootstrap CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
+<!-- Theme CSS -->
 <link href="resources/css/theme_style.css" rel="stylesheet"
 	type="text/css">
-<!-- Fonts -->
+<!-- Fonts CSS-->
 <link href="resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
@@ -26,11 +27,11 @@
 
 		<div class="page-header">
 			<h1>
-				Create a NextBook Account<br> <small>${error}</small>
+				Create a NextBook Account<br> <small>${msg}</small>
 			</h1>
 		</div>
 
-		<!-- Simple Login - START -->
+		<!-- Register Form START -->
 		<form name=registerForm class="col-md-12" method="post"
 			accept-charset="utf-8" action="registerSubmit">
 			<div class="form-group">
@@ -53,17 +54,16 @@
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 		</form>
+		<!-- Register Form End -->
+
 		<div class="form-group">
 			<span>Already have an account?<a href="login"> Log in</a></span>
 		</div>
-		<!-- Simple Login - END -->
 
 	</div>
-	<!-- /container -->
 
 	<jsp:include page="page-module/footer.jsp" flush="false" />
 
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- Core JavaScript Files -->
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>

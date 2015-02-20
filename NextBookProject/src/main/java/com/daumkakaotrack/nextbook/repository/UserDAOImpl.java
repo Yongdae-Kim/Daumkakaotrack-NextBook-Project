@@ -20,31 +20,46 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean insertUser(User user) {
-
-		boolean result = false;
-
+	public boolean isExistedUser(String username) {
 		SqlSession session = new SessionManager()
 				.createSession(UserMapper.class);
 		UserMapper mapper = session.getMapper(UserMapper.class);
 		try {
-			if (mapper.isExistedUsername(user.getUsername()) == 0) {
-				mapper.insertUser(user);
-				mapper.insertUserRole(user.getUsername());
-				result = true;
-			}
+			return mapper.isExistedUsername(username) != 0;
 		} catch (NullPointerException e) {
 			throw new NullPointerException();
 		} finally {
 			session.close();
 		}
-		return result;
 	}
 
 	@Override
-	public void updateUser(String username) {
-		// TODO Auto-generated method stub
+	public void insertUser(User user) {
+		SqlSession session = new SessionManager()
+				.createSession(UserMapper.class);
+		UserMapper mapper = session.getMapper(UserMapper.class);
+		try {
+			mapper.insertUser(user);
+			mapper.insertUserRole(user.getUsername());
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
+	}
 
+	@Override
+	public void updateUserPassword(String username, String password) {
+		SqlSession session = new SessionManager()
+				.createSession(UserMapper.class);
+		UserMapper mapper = session.getMapper(UserMapper.class);
+		try {
+			mapper.updateUserPassword(username, password);
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
 	}
 
 	@Override
@@ -61,4 +76,5 @@ public class UserDAOImpl implements UserDAO {
 			session.close();
 		}
 	}
+
 }

@@ -1,4 +1,3 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -9,7 +8,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Reset Your NextBook Password</title>
+<title>Change Password</title>
 
 <!-- Bootstrap CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
@@ -22,43 +21,45 @@
 	rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body onload='document.registerForm.newUsername.focus();'>
+
 	<div class="container">
 		<jsp:include page="page-module/loginNavi.jsp" flush="false" />
 		<div class="page-header">
 			<h1>
-				Reset Your NextBook Password<br>
-				<c:choose>
-					<c:when test="${empty msg}">
-						<small>Submit your email address and we’ll send you a link
-							to reset your password.</small>
-					</c:when>
-					<c:otherwise>
-						<small>${msg}</small>
-					</c:otherwise>
-				</c:choose>
+				Change Password<br> <small>${msg}</small>
 			</h1>
 		</div>
 
-		<!-- Reset Form Start -->
-		<form name="resetForm" class="col-md-12" method="post"
-			action="resetSubmit">
-			<div class=" form-group">
-				<input type="email" class="form-control input-lg"
-					placeholder="Email" name="username">
+		<!-- Change Form START -->
+		<form name=changeForm class="col-md-12" method="post"
+			accept-charset="utf-8" action="registerSubmit">
+			<div class="form-group">
+				<input type="password" class="form-control input-lg"
+					placeholder="Old Password" name="oldPassword" />
 			</div>
 			<div class="form-group">
-				<input name="submit" class="btn btn-primary btn-lg btn-block"
-					type="submit" value="Send" />
+				<input type="password" class="form-control input-lg"
+					placeholder="New Password" name="password" />
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control input-lg"
+					placeholder="New Password(again)" name="confirmPassword" />
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-lg btn-block"
+					value="Save" />
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 		</form>
-		<!-- Reset Form End -->
+		<!-- Change Form End -->
+
 	</div>
 
 	<jsp:include page="page-module/footer.jsp" flush="false" />
 
+	<!-- Core JavaScript Files -->
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 

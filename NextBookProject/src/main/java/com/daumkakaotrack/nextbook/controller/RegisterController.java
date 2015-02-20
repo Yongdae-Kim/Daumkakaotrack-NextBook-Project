@@ -29,27 +29,29 @@ public class RegisterController {
 
 		ModelAndView model = new ModelAndView();
 
-		String error = "";
+		String msg = "";
 		String viewName = "register";
 
 		if (!bindingResult.hasErrors()) {
 
 			if (!user.isMatchedPassword()) {
-				error = "password does not match the confirm password";
+				msg = "password doesn't match the confirm password";
 			} else {
-
-				if (new UserDAOImpl().insertUser(user) == true)
+				UserDAOImpl userDAOImpl = new UserDAOImpl();
+				if (!userDAOImpl.isExistedUser(user.getUsername())) {
+					userDAOImpl.insertUser(user);
 					viewName = "login";
-				else
-					error = "email already in use";
+				} else {
+					msg = "email already in use";
+				}
 			}
 		} else {
-			error = "username type is email, password length must be between 5 to 50 characters";
+			msg = "password length must be between 5 to 50 characters";
 		}
 
 		model.addObject("username", user.getUsername());
 		model.addObject("password", user.getPassword());
-		model.addObject("error", error);
+		model.addObject("msg", msg);
 		model.setViewName(viewName);
 
 		return model;

@@ -21,18 +21,25 @@
 				</div>
 			</sec:authorize></li>
 		<li><sec:authorize access="hasRole('ROLE_USER')">
-				<c:if test="${pageContext.request.userPrincipal.name != null}">
-					<span>${pageContext.request.userPrincipal.name}</span>
-					<button id="logoutBtn" type="button"
-						class="btn btn-default navbar-btn">Logout</button>
-				</c:if>
+				<div>
+					<c:if test="${pageContext.request.userPrincipal.name != null}">
 
-				<!-- For login user -->
-				<c:url value="/j_spring_security_logout" var="logoutUrl" />
-				<form id="logoutForm" action="${logoutUrl}" method="post">
-					<input type="hidden" name="${_csrf.parameterName}"
-						value="${_csrf.token}" />
-				</form>
+						<span>${pageContext.request.userPrincipal.name}</span>
+						<a href="change">
+							<button type="button" class="btn btn-default navbar-btn">My
+								Page</button>
+						</a>
+						<button id="logoutBtn" type="button"
+							class="btn btn-default navbar-btn">Logout</button>
+					</c:if>
+
+					<!-- For login user -->
+					<c:url value="/j_spring_security_logout" var="logoutUrl" />
+					<form id="logoutForm" action="${logoutUrl}" method="post">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
+					</form>
+				</div>
 			</sec:authorize>
 		<li>
 	</ul>

@@ -1,10 +1,9 @@
 package com.daumkakaotrack.nextbook.model;
 
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User {
-	@Pattern(regexp = "^[_0-9a-zA-Z-]+@[0-9a-zA-Z]+(.[_0-9a-zA-Z-]+)*$")
+
 	String username;
 	@Size(min = 5, max = 50)
 	String password;

@@ -12,21 +12,18 @@ import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 @Service
 public class MailingService {
-	public static ClientResponse sendResetPasswordMessage() {
+	public static ClientResponse sendResetPasswordMessage(String email,
+			String resetPassword) {
 		Client client = Client.create();
 		client.addFilter(new HTTPBasicAuthFilter("api",
 				"key-aa8c662d787d406903daf435173d544e"));
 		WebResource webResource = client
 				.resource("https://api.mailgun.net/v2/sandboxc16709d018a843b4a14f8b48a309b757.mailgun.org/messages");
 		MultivaluedMapImpl formData = new MultivaluedMapImpl();
-		formData.add(
-				"from",
-				"Mailgun Sandbox <postmaster@sandboxc16709d018a843b4a14f8b48a309b757.mailgun.org>");
-		formData.add("to", "Scatchback <yongdae91@hanmail.net>");
-		formData.add("subject", "Hello Scatchback");
-		formData.add(
-				"text",
-				"Congratulations Scatchback, you just sent an email with Mailgun!  You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send 10,000 emails/month for free.");
+		formData.add("from", "nextbook<noreply@nextbook.com>");
+		formData.add("to", email);
+		formData.add("subject", "Hello");
+		formData.add("text", "Your temporary password is \n" + resetPassword);
 		return webResource.type(MediaType.APPLICATION_FORM_URLENCODED).post(
 				ClientResponse.class, formData);
 	}

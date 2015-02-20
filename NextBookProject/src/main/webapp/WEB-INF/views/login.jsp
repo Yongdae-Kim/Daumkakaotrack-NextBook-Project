@@ -12,12 +12,13 @@
 <meta name="author" content="" />
 <title>Log in to NextBook</title>
 
-<!-- Bootstrap Core CSS -->
+<!-- Bootstrap CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
+<!-- Theme CSS -->
 <link href="resources/css/theme_style.css" rel="stylesheet"
 	type="text/css">
-<!-- Fonts -->
+<!-- Fonts CSS -->
 <link href="resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
@@ -38,12 +39,12 @@
 			</div>
 		</c:if> 
 		--%>
-		<!-- Simple Login - START -->
+		<!-- Login Form Start -->
 		<form name='loginForm' class="col-md-12" method="post"
 			action="<c:url value='/j_spring_security_check' />">
 			<div class="form-group">
-				<input type="email" class="form-control input-lg" placeholder="Email"
-					name="username" value="${username}" />
+				<input type="email" class="form-control input-lg"
+					placeholder="Email" name="username" value="${username}" />
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
@@ -56,6 +57,7 @@
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 		</form>
+		<!-- Login Form End -->
 		<div class="form-group">
 			<span>Forget your password?<a href="reset"> Reset your
 					password</a></span>
@@ -64,14 +66,10 @@
 			<span>Don't have an a account?<a href="register"> Create a
 					NextBook account</a></span>
 		</div>
-		<!-- Simple Login - END -->
 	</div>
-	<!-- /container -->
 
 	<jsp:include page="page-module/footer.jsp" flush="false" />
 
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- Core JavaScript Files -->
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 
