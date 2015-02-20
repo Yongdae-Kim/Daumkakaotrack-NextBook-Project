@@ -32,4 +32,8 @@ public interface UserMapper {
 
 	@Select("SELECT COUNT(*) FROM nextbook.users WHERE username=#{username}")
 	int isExistedUsername(String username);
+
+	@Select("SELECT COUNT(*) FROM nextbook.users WHERE username=#{username} AND password=#{password}")
+	int IsIdentifiedUser(@Param("username") String username,
+			@Param("password") String password);
 }

@@ -22,7 +22,7 @@ public class MailingService {
 		MultivaluedMapImpl formData = new MultivaluedMapImpl();
 		formData.add("from", "nextbook<noreply@nextbook.com>");
 		formData.add("to", email);
-		formData.add("subject", "Hello");
+		formData.add("subject", "Nextbook Password reset");
 		formData.add("text", "Your temporary password is \n" + resetPassword);
 		return webResource.type(MediaType.APPLICATION_FORM_URLENCODED).post(
 				ClientResponse.class, formData);

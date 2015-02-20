@@ -17,4 +17,6 @@ public interface UserDAO {
 	public void deleteUser(String username);
 
 	public boolean isExistedUser(String username);
+
+	public boolean IsIdentifiedUser(String username, String password);
 }

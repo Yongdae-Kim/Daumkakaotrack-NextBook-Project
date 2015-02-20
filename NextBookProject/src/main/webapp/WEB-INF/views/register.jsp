@@ -21,7 +21,7 @@
 	rel="stylesheet" type="text/css">
 
 </head>
-<body onload='document.registerForm.newUsername.focus();'>
+<body onload='document.registerForm.username.focus();'>
 
 	<div class="container">
 

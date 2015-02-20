@@ -46,3 +46,16 @@ DELETE FROM nextbook.users WHERE username='rty@hanmail.net';
 use nextbook;
 SELECT COUNT(*) FROM nextbook.users WHERE username ='rty@hanmail.net'
 
+
+use nextbook;
+SELECT COUNT(*) FROM nextbook.users WHERE username = 'admin@hanmail.net' AND password = '123456';
+
+
+
+
+
+
+
+
+
+

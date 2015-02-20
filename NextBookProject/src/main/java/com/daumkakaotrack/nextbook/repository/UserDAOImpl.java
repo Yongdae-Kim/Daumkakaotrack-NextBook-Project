@@ -34,6 +34,20 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
+	public boolean IsIdentifiedUser(String username, String password) {
+		SqlSession session = new SessionManager()
+				.createSession(UserMapper.class);
+		UserMapper mapper = session.getMapper(UserMapper.class);
+		try {
+			return mapper.IsIdentifiedUser(username, password) != 0;
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
+	}
+
+	@Override
 	public void insertUser(User user) {
 		SqlSession session = new SessionManager()
 				.createSession(UserMapper.class);
@@ -76,5 +90,4 @@ public class UserDAOImpl implements UserDAO {
 			session.close();
 		}
 	}
-
 }

@@ -33,7 +33,7 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 
 		if (error != null) {
-			model.addObject("error", "Invalid username and password!");
+			model.addObject("error", "invalid username and password!");
 		}
 
 		model.setViewName("login");

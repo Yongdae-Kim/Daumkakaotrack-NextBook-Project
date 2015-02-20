@@ -21,7 +21,7 @@
 	rel="stylesheet" type="text/css">
 
 </head>
-<body onload='document.registerForm.newUsername.focus();'>
+<body onload='document.changeForm.oldPassword.focus();'>
 
 	<div class="container">
 		<jsp:include page="page-module/loginNavi.jsp" flush="false" />
@@ -33,7 +33,7 @@
 
 		<!-- Change Form START -->
 		<form name=changeForm class="col-md-12" method="post"
-			accept-charset="utf-8" action="registerSubmit">
+			accept-charset="utf-8" action="changeSubmit">
 			<div class="form-group">
 				<input type="password" class="form-control input-lg"
 					placeholder="Old Password" name="oldPassword" />

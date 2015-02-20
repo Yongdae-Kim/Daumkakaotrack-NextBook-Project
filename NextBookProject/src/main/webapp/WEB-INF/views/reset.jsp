@@ -22,7 +22,7 @@
 	rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body onload='document.resetForm.username.focus();'>
 	<div class="container">
 		<jsp:include page="page-module/loginNavi.jsp" flush="false" />
 		<div class="page-header">
