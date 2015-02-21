@@ -46,7 +46,7 @@ public class ChangeController {
 			if (!user.isMatchedPassword()) {
 				msg = "password doesn't match the confirm password!";
 			} else {
-				if (userDAO.IsIdentifiedUser(username, oldPassword)) {
+				if (userDAO.isIdentifiedUser(username, oldPassword)) {
 					if (!oldPassword.equals(user.getPassword())) {
 						userDAO.updateUserPassword(username, user.getPassword());
 						viewName = "index";

@@ -41,7 +41,7 @@ public class RegisterController {
 			if (!user.isMatchedPassword()) {
 				msg = "password doesn't match the confirm password";
 			} else {
-				if (!userDAO.isExistedUser(user.getUsername())) {
+				if (!userDAO.isExistedUsername(user.getUsername())) {
 					userDAO.insertUser(user);
 					viewName = "login";
 				} else {

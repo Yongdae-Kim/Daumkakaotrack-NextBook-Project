@@ -29,7 +29,7 @@ public class ResetController {
 
 		UserDAOImpl userDAOImpl = new UserDAOImpl();
 
-		if (!userDAOImpl.isExistedUser(username)) {
+		if (!userDAOImpl.isExistedUsername(username)) {
 			msg = "there wasn't an account for that email";
 		} else {
 			String resetPassword = new ResetPasswordGenerator()
