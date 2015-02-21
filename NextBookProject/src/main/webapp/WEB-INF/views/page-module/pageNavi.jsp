@@ -4,9 +4,9 @@
 
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
-		<li class="active"><a href="#intro">Home</a></li>
-		<li><a href="#today">Today's Books</a></li>
-		<li><a href="#">My Books</a></li>
+		<li class="active"><a href="welcome#intro">Home</a></li>
+		<li><a href="welcome#today">Today's Books</a></li>
+		<li><a href="mybook#mybooklist">My Books</a></li>
 		<li><a href="#">Add Books</a></li>
 		<li><a href="#">Recommend</a></li>
 		<li><sec:authorize access="isAnonymous()">

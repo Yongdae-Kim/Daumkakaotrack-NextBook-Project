@@ -34,15 +34,6 @@
 
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container">
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-main-collapse">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="welcome">
-					<h1>NEXT BOOK</h1>
-				</a>
-			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<jsp:include page="page-module/pageNavi.jsp" flush="false" />
 			<!-- /.navbar-collapse -->
@@ -50,31 +41,16 @@
 		<!-- /.container -->
 	</nav>
 
-	<!-- Section: intro -->
-	<section id="intro" class="intro">
-		<div class="slogan">
-			<h2>
-				WELCOME TO <span class="text_color">NEXT BOOK</span>
-			</h2>
-			<h4>WE ARE GROUP OF GENTLEMEN MAKING AWESOME WEB WITH BOOTSTRAP</h4>
-		</div>
-		<div class="page-scroll">
-			<a href="#today" class="btn btn-circle"> <i
-				class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-	</section>
-	<!-- /Section: intro -->
 
 	<!-- Section: today -->
-	<section id="today" class="home-section text-center">
+	<section id="mybooklist" class="home-section text-center">
 		<div class="heading-about">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="wow bounceInDown" data-wow-delay="0.4s">
 							<div class="section-heading">
-								<h2>TODAY'S BOOKS</h2>
+								<h2>MY BOOKS</h2>
 								<i class="fa fa-2x fa-angle-down"></i>
 
 							</div>
