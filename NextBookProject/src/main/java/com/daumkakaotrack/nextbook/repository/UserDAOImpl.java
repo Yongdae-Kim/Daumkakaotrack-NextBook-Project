@@ -8,6 +8,7 @@ import com.daumkakaotrack.nextbook.dao.UserDAO;
 import com.daumkakaotrack.nextbook.model.User;
 import com.daumkakaotrack.nextbook.repository.userquery.CheckUsername;
 import com.daumkakaotrack.nextbook.repository.userquery.DeleteUser;
+import com.daumkakaotrack.nextbook.repository.userquery.FetchAllUsers;
 import com.daumkakaotrack.nextbook.repository.userquery.IdentifyUser;
 import com.daumkakaotrack.nextbook.repository.userquery.InsertUser;
 import com.daumkakaotrack.nextbook.repository.userquery.UpdatePassword;
@@ -18,9 +19,9 @@ public class UserDAOImpl implements UserDAO {
 	private UserQueryRunner queryRunnuer = new UserQueryRunner();
 
 	@Override
-	public List<User> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> getAllUsers() {
+		UserQueryStrategy strategy = new FetchAllUsers();
+		return queryRunnuer.executeListReturnQuery(strategy);
 	}
 
 	@Override

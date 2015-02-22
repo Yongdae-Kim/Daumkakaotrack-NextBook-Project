@@ -11,7 +11,7 @@ import com.daumkakaotrack.nextbook.service.TodayBooksService;
 public class HomeController {
 
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
-	public ModelAndView defaultPage() {
+	public ModelAndView home() {
 
 		ModelAndView model = new ModelAndView();
 

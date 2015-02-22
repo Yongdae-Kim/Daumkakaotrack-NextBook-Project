@@ -8,7 +8,7 @@ import com.daumkakaotrack.nextbook.model.User;
 
 @Repository
 public interface UserDAO {
-	public List<User> getUsers();
+	public List<User> getAllUsers();
 
 	public void insertUser(User user);
 

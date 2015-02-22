@@ -14,6 +14,19 @@ public class BookQueryRunner {
 	private final Class mapperClass = BookMapper.class;
 
 	@SuppressWarnings("unchecked")
+	public void executeNoReturnQuery(BookQueryStrategy strategy) {
+		SqlSession session = new SessionManager().createSession(mapperClass);
+		BookMapper mapper = session.getMapper(mapperClass);
+		try {
+			strategy.query(mapper);
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
+	}
+
+	@SuppressWarnings("unchecked")
 	public List<Book> executeListReturnQuery(BookQueryStrategy strategy) {
 		SqlSession session = new SessionManager().createSession(mapperClass);
 		BookMapper mapper = session.getMapper(mapperClass);

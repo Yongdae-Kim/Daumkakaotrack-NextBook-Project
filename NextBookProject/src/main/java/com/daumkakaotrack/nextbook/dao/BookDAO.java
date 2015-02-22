@@ -12,4 +12,5 @@ public interface BookDAO {
 
 	public List<Book> getReadBooks(String username);
 
+	public void deleteBook(String isbn);
 }

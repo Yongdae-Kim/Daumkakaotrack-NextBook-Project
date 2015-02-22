@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.daumkakaotrack.nextbook.dao.BookDAO;
 import com.daumkakaotrack.nextbook.model.Book;
+import com.daumkakaotrack.nextbook.repository.bookquery.DeleteBook;
 import com.daumkakaotrack.nextbook.repository.bookquery.FetchAllBooks;
 import com.daumkakaotrack.nextbook.repository.bookquery.FetchReadBooks;
 
@@ -26,4 +27,9 @@ public class BookDAOImpl implements BookDAO {
 		return (List<Book>) queryRunnuer.executeListReturnQuery(strategy);
 	}
 
+	@Override
+	public void deleteBook(String isbn) {
+		BookQueryStrategy strategy = new DeleteBook(isbn);
+		queryRunnuer.executeNoReturnQuery(strategy);
+	}
 }

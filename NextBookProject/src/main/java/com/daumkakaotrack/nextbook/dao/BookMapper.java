@@ -14,4 +14,10 @@ public interface BookMapper {
 			+ "FROM nextbook.read_books rb LEFT OUTER JOIN nextbook.books b "
 			+ "ON rb.isdn = b.isdn " + "WHERE username=#{username}")
 	ArrayList<Book> getReadBooks(String username);
+
+	@Select("DELETE FROM nextbook.read_books WHERE isdn=#{isbn}")
+	void deleteReadBook(String isbn);
+
+	@Select("DELETE FROM nextbook.books WHERE isdn=#{isbn}")
+	void deleteBook(String isbn);
 }
