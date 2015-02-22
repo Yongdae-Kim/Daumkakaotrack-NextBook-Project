@@ -13,18 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.daumkakaotrack.nextbook.dao.UserDAO;
 import com.daumkakaotrack.nextbook.model.User;
+import com.daumkakaotrack.nextbook.service.AuthenticationService;
 
 @Controller
 public class ChangeController {
 
 	@Autowired
 	private UserDAO userDAO;
-	private String username;
 
 	@RequestMapping(value = "/change", method = RequestMethod.POST)
-	public ModelAndView reset(@RequestParam("username") String username) {
-
-		this.username = username;
+	public ModelAndView reset() {
 
 		ModelAndView model = new ModelAndView();
 		model.setViewName("change");
@@ -38,6 +36,7 @@ public class ChangeController {
 
 		ModelAndView model = new ModelAndView();
 
+		String username = new AuthenticationService().getSessionId();
 		String msg = "";
 		String viewName = "change";
 

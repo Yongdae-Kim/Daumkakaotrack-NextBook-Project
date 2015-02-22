@@ -52,7 +52,6 @@
 							<div class="section-heading">
 								<h2>MY BOOKS</h2>
 								<i class="fa fa-2x fa-angle-down"></i>
-
 							</div>
 						</div>
 					</div>

@@ -16,7 +16,7 @@ public class HomeController {
 		ModelAndView model = new ModelAndView();
 
 		TodayBooksService service = new TodayBooksService();
-		model.addObject("randomBooks", service.getTodayBooks());
+		model.addObject("books", service.getTodayBooks());
 
 		model.setViewName("index");
 

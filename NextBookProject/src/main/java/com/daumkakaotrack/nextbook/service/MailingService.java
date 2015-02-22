@@ -2,15 +2,12 @@ package com.daumkakaotrack.nextbook.service;
 
 import javax.ws.rs.core.MediaType;
 
-import org.springframework.stereotype.Service;
-
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 
-@Service
 public class MailingService {
 	public static ClientResponse sendResetPasswordMessage(String email,
 			String resetPassword) {

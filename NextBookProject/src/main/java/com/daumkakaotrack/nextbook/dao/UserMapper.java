@@ -10,7 +10,7 @@ import com.daumkakaotrack.nextbook.model.User;
 public interface UserMapper {
 
 	@Select("SELECT * FROM nextbook.users")
-	ArrayList<User> getUsers();
+	ArrayList<User> getAllUsers();
 
 	@Select("INSERT INTO nextbook.users (username,password,enabled)"
 			+ "VALUES (#{username},#{password},TRUE)")
@@ -20,20 +20,23 @@ public interface UserMapper {
 			+ "VALUES (#{username},'ROLE_USER')")
 	void insertUserRole(String username);
 
-	@Select("DELETE FROM nextbook.user_roles WHERE username=#{username}")
+	@Select("DELETE FROM nextbook.user_roles " + "WHERE username=#{username}")
 	void deleteUserRole(String username);
 
-	@Select("DELETE FROM nextbook.users WHERE username=#{username}")
+	@Select("DELETE FROM nextbook.users " + "WHERE username=#{username}")
 	void deleteUser(String username);
 
-	@Select("UPDATE nextbook.users SET password=#{password} WHERE username=#{username}")
+	@Select("UPDATE nextbook.users " + "SET password=#{password} "
+			+ "WHERE username=#{username}")
 	void updateUserPassword(@Param("username") String username,
 			@Param("password") String password);
 
-	@Select("SELECT COUNT(*) FROM nextbook.users WHERE username=#{username}")
+	@Select("SELECT COUNT(*) FROM nextbook.users "
+			+ "WHERE username=#{username}")
 	int isExistedUsername(String username);
 
-	@Select("SELECT COUNT(*) FROM nextbook.users WHERE username=#{username} AND password=#{password}")
+	@Select("SELECT COUNT(*) FROM nextbook.users "
+			+ "WHERE username=#{username} AND password=#{password}")
 	int IsIdentifiedUser(@Param("username") String username,
 			@Param("password") String password);
 }
