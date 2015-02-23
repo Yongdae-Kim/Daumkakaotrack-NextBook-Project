@@ -12,17 +12,21 @@
 					</h5>
 					<p class="subtitle">
 						<c:out value="${books.author}" />
-					</p>
-					<p class="subtitle">
-						<c:out value="${books.publisher}" />
+						<c:out value="${books.pub_nm}" />
 					</p>
 					<div class="avatar">
-						<img src="<c:out value="${books.src}"/>"
-							alt="<c:out value="${books.title}"/> image"
-							class="img-responsive img-circle" />
+						<a href="${books.link}"> <c:if
+								test="${empty books.cover_l_url}">
+								<img style="width:120px" class="img-responsive img-circle"
+									src="http://dreamy.jejunu.ac.kr/image/login/logo2.jpg">
+							</c:if> <c:if test="${not empty books.cover_l_url}">
+								<img class="img-responsive img-circle"
+									src="${books.cover_l_url}">
+							</c:if></a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </c:forEach>
+

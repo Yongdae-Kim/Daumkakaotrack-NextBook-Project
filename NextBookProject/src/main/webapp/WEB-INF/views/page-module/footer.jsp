@@ -1,3 +1,3 @@
 <footer>
-	<p>&copy;Copyright 2014 - Squad. All rights reserved.</p>
+	<p>&copy;Copyright 2015 - DaumKakao. All rights reserved.</p>
 </footer>

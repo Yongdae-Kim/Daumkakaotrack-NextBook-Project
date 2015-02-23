@@ -16,16 +16,19 @@ public class TodayBooksService {
 	public TodayBooksService() {
 		todayBooks = new ArrayList<Book>();
 
-		int range = bookDAO.getAllBooks().size();
+		if (bookDAO.getAllBooks().size() != 0) {
 
-		todayBooks.add(bookDAO.getAllBooks().get(
-				new RandomNumGenerator(range).createNum()));
-		todayBooks.add(bookDAO.getAllBooks().get(
-				new RandomNumGenerator(range).createNum()));
-		todayBooks.add(bookDAO.getAllBooks().get(
-				new RandomNumGenerator(range).createNum()));
-		todayBooks.add(bookDAO.getAllBooks().get(
-				new RandomNumGenerator(range).createNum()));
+			int range = bookDAO.getAllBooks().size();
+
+			todayBooks.add(bookDAO.getAllBooks().get(
+					new RandomNumGenerator(range).createNum()));
+			todayBooks.add(bookDAO.getAllBooks().get(
+					new RandomNumGenerator(range).createNum()));
+			todayBooks.add(bookDAO.getAllBooks().get(
+					new RandomNumGenerator(range).createNum()));
+			todayBooks.add(bookDAO.getAllBooks().get(
+					new RandomNumGenerator(range).createNum()));
+		}
 	}
 
 	public List<Book> getTodayBooks() {

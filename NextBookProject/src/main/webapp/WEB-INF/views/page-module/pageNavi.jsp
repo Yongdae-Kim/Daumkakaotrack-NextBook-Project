@@ -1,7 +1,6 @@
 <%@taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
 		<li class="active"><a href="welcome#intro">Home</a></li>
@@ -19,7 +18,7 @@
 		</sec:authorize>
 		<sec:authorize access="hasRole('ROLE_USER')">
 			<li><a href="mybook#mybooklist">My Books</a></li>
-			<li><a href="#">Add Books</a></li>
+			<li><a href="search">Add Books</a></li>
 			<li><a href="#">Recommend</a></li>
 			<sec:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href="admin">Admin</a></li>

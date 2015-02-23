@@ -27,11 +27,37 @@ public class BookQueryRunner {
 	}
 
 	@SuppressWarnings("unchecked")
+	public boolean executeBooleanReturnQuery(BookQueryStrategy strategy) {
+		SqlSession session = new SessionManager().createSession(mapperClass);
+		BookMapper mapper = session.getMapper(mapperClass);
+		try {
+			return (Boolean) strategy.query(mapper);
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
+	}
+
+	@SuppressWarnings("unchecked")
 	public List<Book> executeListReturnQuery(BookQueryStrategy strategy) {
 		SqlSession session = new SessionManager().createSession(mapperClass);
 		BookMapper mapper = session.getMapper(mapperClass);
 		try {
 			return (List<Book>) strategy.query(mapper);
+		} catch (NullPointerException e) {
+			throw new NullPointerException();
+		} finally {
+			session.close();
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public Book executeBookReturnQuery(BookQueryStrategy strategy) {
+		SqlSession session = new SessionManager().createSession(mapperClass);
+		BookMapper mapper = session.getMapper(mapperClass);
+		try {
+			return (Book) strategy.query(mapper);
 		} catch (NullPointerException e) {
 			throw new NullPointerException();
 		} finally {
