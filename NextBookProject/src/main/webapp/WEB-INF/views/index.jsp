@@ -56,7 +56,7 @@
 			<h2>
 				WELCOME TO <span class="text_color">NEXT BOOK</span>
 			</h2>
-			<h4>WE ARE GROUP OF GENTLEMEN MAKING AWESOME WEB WITH BOOTSTRAP</h4>
+			<h4>WE ARE GROUP OF DAUMKAKAOTRACK TEAM MAKING NEXTBOOK</h4>
 		</div>
 		<div class="page-scroll">
 			<a href="#today" class="btn btn-circle"> <i
@@ -112,7 +112,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/jquery.easing.min.js"></script>

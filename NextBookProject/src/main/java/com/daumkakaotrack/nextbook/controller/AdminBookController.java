@@ -46,7 +46,6 @@ public class AdminBookController {
 			insertBook(book);
 			break;
 		default:
-			bookMsg = "asdas";
 			break;
 		}
 		model.addObject("bookMsg", bookMsg);
@@ -57,7 +56,7 @@ public class AdminBookController {
 
 	private void deleteBook(Book book) {
 		if (!bookDAO.alreadyHasBook(book.getIsbn13()))
-			bookMsg = "그딴건 존재하지않음";
+			bookMsg = "Does not exist.";
 		else
 			bookDAO.deleteBook(book.getIsbn13());
 	}
@@ -66,6 +65,6 @@ public class AdminBookController {
 		if (!bookDAO.alreadyHasBook(book.getIsbn13()))
 			bookDAO.insertBook(book);
 		else
-			bookMsg = "이미존재함ㅅㅂ아";
+			bookMsg = "Already exists.";
 	}
 }

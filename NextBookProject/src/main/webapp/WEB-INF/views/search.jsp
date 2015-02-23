@@ -40,7 +40,7 @@
 					<i class="fa fa-bars"></i>
 				</button>
 				<a class="navbar-brand" href="welcome">
-					<h1>ADD BOOKS</h1>
+					<h1>NEXT BOOKS</h1>
 				</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,7 +67,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12 bookListWrap">
-						<table id="bookList" class="table table-bordered">
+						<table class="table table-bordered">
 							<tr>
 								<th>Image</th>
 								<th>Title</th>
@@ -75,25 +75,31 @@
 								<th>Category</th>
 								<th>Add</th>
 							</tr>
+
 							<c:forEach var="item" items="${bookList}" varStatus="status">
 								<tr>
-									<td class="bookImg"><a href="${item.link}"><img
-											src="${item.cover_s_url}"></a></td>
-									<td><a href="${item.link}">${item.title}</a></td>
-									<td>${item.pub_nm}/${item.author}</td>
-									<td>${item.category}</td>
-									<td>
+									<td align="center"><a href="${item.link}"><c:if
+												test="${empty item.cover_s_url}">
+												<img style="width: 80px"
+													src="http://dreamy.jejunu.ac.kr/image/login/logo2.jpg">
+											</c:if> <c:if test="${not empty item.cover_s_url}">
+												<img src="${item.cover_s_url}">
+											</c:if></a></td>
+									<td align="center"><a href="${item.link}">${item.title}</a></td>
+									<td align="center">${item.pub_nm}/${item.author}</td>
+									<td align="center">${item.category}</td>
+									<td align="center">
 										<form name="addBook" action="search" method="GET">
 											<input class="hide" name="pageno" value="${pageno}" /> <input
 												class="hide" name="keyword" value="${query}" /> <input
-												class="hide" name="index" value="${status.index}" />
-											<button class="addBtn" type="submit">Add</button>
+												class="hide" name="index" value="${status.index}" /> <input
+												class="btn btn-default navbar-btn" type="submit" value="Add" />
 										</form>
 									</td>
 								</tr>
 							</c:forEach>
 						</table>
-						<div class="col-md-8">
+						<div class="col-md-12  text-center">
 							<c:forEach var="pageNo1" begin="1" end="10">
 								<c:if test="${pageno-(11-pageNo1)>=1}">
 									<a href="search?keyword=한국&pageno=${pageno-(8-pageNo1)}">${pageno-(8-pageNo1)}</a>
@@ -105,18 +111,6 @@
 									<a href="search?keyword=한국&pageno=${pageno+pageNo2}">${pageno+pageNo2}</a>
 								</c:if>
 							</c:forEach>
-						</div>
-						<div>
-							<form action="myBook" method="GET">
-								<button class="btn btn-default" type="submit">Link to
-									My Book</button>
-							</form>
-						</div>
-						<div>
-							<form action="recommend" method="GET">
-								<button class="btn btn-default" type="submit">Link to
-									Recommend Book</button>
-							</form>
 						</div>
 					</div>
 				</div>

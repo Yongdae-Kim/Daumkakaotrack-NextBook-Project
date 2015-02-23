@@ -25,7 +25,7 @@ public class AdminUserController {
 		ModelAndView model = new ModelAndView();
 
 		if (!userDAO.isExistedUsername(username)) {
-			model.addObject("userMsg", "없는유저입니다.");
+			model.addObject("userMsg", "Invalid username.");
 		} else {
 			bookDAO.deleteAllUserBooks(username);
 			userDAO.deleteUser(username);
