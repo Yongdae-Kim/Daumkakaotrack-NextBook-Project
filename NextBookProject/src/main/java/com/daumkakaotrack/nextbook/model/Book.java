@@ -80,7 +80,7 @@ public class Book {
 	}
 
 	public String getAuthor() {
-		return author;
+		return author.replaceAll("\\<.*?>", "");
 	}
 
 	public void setAuthor(String author) {
@@ -96,7 +96,7 @@ public class Book {
 	}
 
 	public String getPub_nm() {
-		return pub_nm;
+		return pub_nm.replaceAll("\\<.*?>", "");
 	}
 
 	public void setPub_nm(String pub_nm) {

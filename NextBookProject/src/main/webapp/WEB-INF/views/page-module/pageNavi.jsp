@@ -19,7 +19,7 @@
 		<sec:authorize access="hasRole('ROLE_USER')">
 			<li><a href="mybook#mybooklist">My Books</a></li>
 			<li><a href="search">Add Books</a></li>
-			<li><a href="#">Recommend</a></li>
+			<li><a href="javascript:;">Recommend</a></li>
 			<sec:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href="admin">Admin</a></li>
 			</sec:authorize>
